@@ -1,0 +1,26 @@
+/* AutoMAX custom styles */
+
+/* Code block enhancements */
+div.highlight {
+    border-radius: 6px;
+}
+
+/* YAML key coloring in code blocks */
+.highlight .na {
+    color: #38bdf8;
+}
+
+/* Nicer admonition boxes */
+.admonition {
+    border-radius: 6px;
+}
+
+/* Table improvements */
+table.docutils td, table.docutils th {
+    padding: 8px 14px;
+}
+
+/* Badge-style inline literals in tables */
+table.docutils td code {
+    font-size: 0.85em;
+}

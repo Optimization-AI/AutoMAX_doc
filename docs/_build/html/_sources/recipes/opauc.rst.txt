@@ -1,0 +1,69 @@
+One-way pAUC — pAUCLoss (1w) + SOPAs
+======================================
+
+Optimizes partial AUC restricted to a specific FPR range ``[0, max_fpr]``.
+Useful when false positives are costly and sensitivity at low FPR is the
+primary concern.
+
+Config
+------
+
+.. code-block:: yaml
+   :caption: recipes/automax/config_opauc.yaml
+
+   dataset:
+     name: cifar10
+     eval_splits: [val, test]
+     kwargs:
+       imratio: 0.02
+
+   model:
+     name: resnet18
+     pretrained: false
+     num_classes: 1
+     in_channels: 3
+
+   metrics:
+     - AUROC
+   metric_kwargs:
+     - max_fpr: 0.3
+
+   training:
+     project_name: libauc
+     experiment_name: resnet18_opauc_cifar10
+     SEED: 2026
+     epochs: 60
+     batch_size: 128
+     eval_batch_size: 256
+     sampling_rate: 0.5
+     num_workers: 0
+     decay_epochs: [0.5, 0.75]
+     loss: pAUCLoss
+     loss_kwargs:
+       mode: 1w
+     optimizer: SOPAs
+     output_path: ./output
+     resume_from_checkpoint: false
+     save_checkpoint_every: 5
+
+   automax:
+     deterministic: true
+     n_trials: 5
+     SEED: 42
+     name: resnet18_opauc_cifar10
+     output_directory: ./automax_output
+     overwrite: true
+
+Run
+---
+
+.. code-block:: bash
+
+   python -m src.ui.auto_trainer \
+     --config_file recipes/automax/config_opauc.yaml
+
+.. note::
+
+   The ``max_fpr`` value in ``metric_kwargs`` controls which region of the
+   ROC curve is optimized. A value of ``0.3`` means only the area under
+   the curve for FPR ∈ [0, 0.3] is maximized.
