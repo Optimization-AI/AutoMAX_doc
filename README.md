@@ -5,7 +5,7 @@ Sphinx source for the [AutoMAX](https://github.com/Optimization-AI/AutoMAX) docu
 ## Build locally
 
 ```bash
-pip install sphinx furo myst-parser sphinx-copybutton
+pip install sphinx furo myst-parser sphinx-copybutton sphinx-design
 sphinx-build -b html docs docs/_build/html
 open docs/_build/html/index.html
 ```
