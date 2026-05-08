@@ -21,12 +21,14 @@ uses LibAUC's :class:`~libauc.trainer.GNNTrainer`.  Key differences:
 .. rubric:: Functions
 
 .. py:function:: main()
+   :no-index:
 
    Parse CLI arguments, load the GNN megaconf, build an
    :class:`~src.core.autopartial.autopartial` GNNTrainer, and run
    :meth:`~src.core.automax.AutoMAX.optimize`.
 
 .. py:function:: apply_cli_overrides(cfg, args)
+   :no-index:
 
    Identical to :func:`src.auto_trainer.apply_cli_overrides`.
 
@@ -38,6 +40,7 @@ uses LibAUC's :class:`~libauc.trainer.GNNTrainer`.  Key differences:
    :rtype: OmegaConf DictConfig
 
 .. py:function:: set_seed(seed)
+   :no-index:
 
    Identical to :func:`src.auto_trainer.set_seed`.
 
