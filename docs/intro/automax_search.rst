@@ -8,7 +8,7 @@ your chosen loss/optimizer pair.
 How It Works
 ------------
 
-1. AutoMAX reads your config and builds a **configuration space** from
+1. AutoMAX reads your config and builds a **configuration space** from 
    the predefined search space of the selected loss function.
 2. It starts with the **default configuration** (via ``DefaultInitialDesign``)
    to establish a baseline.
@@ -56,6 +56,8 @@ After the search completes, results are written to ``output_directory/name/``:
 
    automax_output/
    └── my_search/
-       ├── runhistory.json      # all trial configs and scores
-       ├── trajectory.json      # incumbent (best) over time
-       └── best_config.yaml     # the winning hyperparameter config
+       ├── runhistory.json  #
+       ├── configspace.json  #
+       ├── intensifier.json  #
+       ├── optimization.json #
+       └── scenario.json #

@@ -64,14 +64,7 @@ Entry Points
 
    * - Command
      - Use case
-   * - ``src.ui.auto_trainer``
+   * - ``src.auto_trainer``
      - AutoTune on standard image datasets (MedMNIST, CIFAR, CheXpert, …)
-   * - ``src.ui.auto_transformers_trainer``
+   * - ``src.auto_transformers_trainer``
      - AutoTune with Transformer backbones (e.g. RIP-Dataset)
-   * - ``src.ui.run_trainer``
-     - Single run without hyperparameter search
-
-.. tip::
-
-   Use ``src.ui.run_trainer`` with a ``recipes/libauc_trainer/`` config to
-   validate your dataset and model setup before launching a full AutoMAX search.

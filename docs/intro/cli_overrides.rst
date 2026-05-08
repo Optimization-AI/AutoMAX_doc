@@ -6,7 +6,7 @@ line. CLI values always take precedence over the config file.
 
 .. code-block:: bash
 
-   python -m src.ui.auto_trainer \
+   python -m src.auto_trainer \
      --config_file config.yaml \
      --epochs 50 \
      --seed 0 \

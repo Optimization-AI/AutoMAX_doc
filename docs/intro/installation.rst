@@ -43,4 +43,4 @@ Verifying the Install
 .. code-block:: bash
 
    python -c "import libauc; print(libauc.__version__)"
-   python -m src.ui.run_trainer --config_file recipes/libauc_trainer/config_auc.yaml
+   python -m src.auto_trainer --config_file recipes/config_auc.yaml
