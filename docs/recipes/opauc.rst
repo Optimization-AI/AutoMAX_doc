@@ -9,7 +9,7 @@ Config
 ------
 
 .. code-block:: yaml
-   :caption: recipes/automax/config_opauc.yaml
+   :caption: recipes/config_opauc.yaml
 
    dataset:
      name: cifar10
@@ -59,8 +59,8 @@ Run
 
 .. code-block:: bash
 
-   python -m src.ui.auto_trainer \
-     --config_file recipes/automax/config_opauc.yaml
+   python -m src.auto_trainer \
+     --config_file recipes/config_opauc.yaml
 
 .. note::
 

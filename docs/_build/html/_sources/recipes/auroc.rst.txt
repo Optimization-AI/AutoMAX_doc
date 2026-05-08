@@ -8,7 +8,7 @@ Config
 ------
 
 .. code-block:: yaml
-   :caption: recipes/automax/config_auc.yaml
+   :caption: recipes/config_auc.yaml
 
    dataset:
      name: cifar10
@@ -54,29 +54,8 @@ Run
 
 .. code-block:: bash
 
-   python -m src.ui.auto_trainer \
-     --config_file recipes/automax/config_auc.yaml
-
-Available dataset variants
---------------------------
-
-.. code-block:: bash
-
-   # PneumoniaMNIST
-   python -m src.ui.auto_trainer \
-     --config_file recipes/automax/config_auc_PneumoniaMNIST.yaml
-
-   # BreastMNIST
-   python -m src.ui.auto_trainer \
-     --config_file recipes/automax/config_auc_BreastMNIST.yaml
-
-   # CheXpert (chest X-ray, multi-label)
-   python -m src.ui.auto_trainer \
-     --config_file recipes/automax/config_auc_CheXpert.yaml
-
-   # RIP-Dataset (Transformer backbone)
-   python -m src.ui.auto_transformers_trainer \
-     --config_file recipes/automax/config_auc_RIP.yaml
+   python -m src.auto_trainer \
+     --config_file recipes/config_auc.yaml
 
 Hyperparameter search space
 ---------------------------

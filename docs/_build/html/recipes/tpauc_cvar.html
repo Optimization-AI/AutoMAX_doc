@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Two-way pAUC CVaR — tpAUC_CVaR_loss + STACO &mdash; AutoMAX 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3b04382a" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Two-way pAUC — pAUCLoss (2w) + SOTAs" href="tpauc.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AutoMAX
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/core.html"><code class="docutils literal notranslate"><span class="pre">src.core</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/automax.html"><code class="docutils literal notranslate"><span class="pre">AutoMAX</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/automax.html#AutoMAX"><code class="docutils literal notranslate"><span class="pre">AutoMAX</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/automax.html#AutoMAX.__init__"><code class="docutils literal notranslate"><span class="pre">AutoMAX.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/automax.html#AutoMAX.train"><code class="docutils literal notranslate"><span class="pre">AutoMAX.train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/automax.html#AutoMAX.optimize"><code class="docutils literal notranslate"><span class="pre">AutoMAX.optimize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/automax_configration.html"><code class="docutils literal notranslate"><span class="pre">AutoMAXConfigration</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/automax_configration.html#AutoMAXConfigration"><code class="docutils literal notranslate"><span class="pre">AutoMAXConfigration</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/autopartial.html"><code class="docutils literal notranslate"><span class="pre">autopartial</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/autopartial.html#id0"><code class="docutils literal notranslate"><span class="pre">autopartial</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/autopartial.html#autopartial.__call__"><code class="docutils literal notranslate"><span class="pre">autopartial.__call__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/helpers.html"><code class="docutils literal notranslate"><span class="pre">src.core.helpers</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/helpers.html#parse_hyperparameters_from_dict"><code class="docutils literal notranslate"><span class="pre">parse_hyperparameters_from_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/auto_trainer.html"><code class="docutils literal notranslate"><span class="pre">src.auto_trainer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/auto_trainer.html#main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/auto_trainer.html#apply_cli_overrides"><code class="docutils literal notranslate"><span class="pre">apply_cli_overrides()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/auto_trainer.html#set_seed"><code class="docutils literal notranslate"><span class="pre">set_seed()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/auto_gnn.html"><code class="docutils literal notranslate"><span class="pre">src.auto_gnn</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/auto_gnn.html#main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/auto_gnn.html#apply_cli_overrides"><code class="docutils literal notranslate"><span class="pre">apply_cli_overrides()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/auto_gnn.html#set_seed"><code class="docutils literal notranslate"><span class="pre">set_seed()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/quickstart.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/quickstart.html#step-1-install">Step 1 — Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/quickstart.html#step-2-write-a-config">Step 2 — Write a config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/quickstart.html#step-3-run-automax">Step 3 — Run AutoMAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/quickstart.html#entry-points">Entry Points</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/installation.html#from-source">From Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/installation.html#core-dependencies">Core Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/installation.html#verifying-the-install">Verifying the Install</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/configuration.html">Configuration Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#dataset"><code class="docutils literal notranslate"><span class="pre">dataset</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#model"><code class="docutils literal notranslate"><span class="pre">model</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#metrics"><code class="docutils literal notranslate"><span class="pre">metrics</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#training"><code class="docutils literal notranslate"><span class="pre">training</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#experiment-tracking">Experiment tracking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#core-training-parameters">Core training parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#loss-and-optimizer">Loss and optimizer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#learning-rate-schedule">Learning rate schedule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#checkpointing">Checkpointing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#automax"><code class="docutils literal notranslate"><span class="pre">automax</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AutoMAX Search</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/automax_search.html">AutoMAX Search</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/automax_search.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/automax_search.html#resuming-a-search">Resuming a Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/automax_search.html#what-gets-tuned">What Gets Tuned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/automax_search.html#output">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/loss_optimizer_pairs.html">Loss / Optimizer Pairs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/loss_optimizer_pairs.html#choosing-a-pair">Choosing a Pair</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/hyperparameter_format.html">Hyperparameter Definition Format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/hyperparameter_format.html#scalar-constant">Scalar Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/hyperparameter_format.html#search-space-dict">Search Space Dict</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/hyperparameter_format.html#sub-fields">Sub-fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/hyperparameter_format.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cli_overrides.html">CLI Overrides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/cli_overrides.html#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Recipes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="auroc.html">AUROC — AUCMLoss + PESG</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auroc.html#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auroc.html#run">Run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auroc.html#hyperparameter-search-space">Hyperparameter search space</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auprc.html">AUPRC — APLoss + SOAP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auprc.html#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auprc.html#run">Run</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="opauc.html">One-way pAUC — pAUCLoss (1w) + SOPAs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="opauc.html#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opauc.html#run">Run</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tpauc.html">Two-way pAUC — pAUCLoss (2w) + SOTAs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tpauc.html#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tpauc.html#run">Run</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Two-way pAUC CVaR — tpAUC_CVaR_loss + STACO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run">Run</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AutoMAX</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Recipes</a></li>
+      <li class="breadcrumb-item active">Two-way pAUC CVaR — tpAUC_CVaR_loss + STACO</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/recipes/tpauc_cvar.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="two-way-pauc-cvar-tpauc-cvar-loss-staco">
+<h1>Two-way pAUC CVaR — tpAUC_CVaR_loss + STACO<a class="headerlink" href="#two-way-pauc-cvar-tpauc-cvar-loss-staco" title="Link to this heading"></a></h1>
+<p>Optimizes two-way partial AUC using a CVaR (Conditional Value-at-Risk)
+surrogate loss, paired with the STACO optimizer. The CVaR formulation
+provides a more robust upper bound on the pAUC loss, particularly useful
+when the score distribution has heavy tails.</p>
+<section id="config">
+<h2>Config<a class="headerlink" href="#config" title="Link to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">recipes/config_tpauc_cvar.yaml</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dataset</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cifar10</span>
+<span class="w">  </span><span class="nt">eval_splits</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">val</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">test</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">kwargs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">imratio</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span>
+
+<span class="nt">model</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resnet18</span>
+<span class="w">  </span><span class="nt">pretrained</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">num_classes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">in_channels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+
+<span class="nt">metrics</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AUROC</span>
+<span class="nt">metric_kwargs</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">max_fpr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
+<span class="w">    </span><span class="nt">min_tpr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.7</span>
+
+<span class="nt">training</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">project_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">libauc</span>
+<span class="w">  </span><span class="nt">experiment_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resnet18_tpAUC_CVaR_loss_cifar10</span>
+<span class="w">  </span><span class="nt">SEED</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026</span>
+
+<span class="w">  </span><span class="nt">epochs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">60</span>
+<span class="w">  </span><span class="nt">batch_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">128</span>
+<span class="w">  </span><span class="nt">eval_batch_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">256</span>
+<span class="w">  </span><span class="nt">sampling_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+<span class="w">  </span><span class="nt">num_workers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">  </span><span class="nt">decay_epochs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.75</span><span class="p p-Indicator">]</span>
+
+<span class="w">  </span><span class="nt">loss</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tpAUC_CVaR_loss</span>
+<span class="w">  </span><span class="nt">loss_kwargs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">surr_loss</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">squared_hinge</span>
+<span class="w">  </span><span class="nt">optimizer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">STACO</span>
+
+<span class="w">  </span><span class="nt">output_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./output</span>
+<span class="w">  </span><span class="nt">resume_from_checkpoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">save_checkpoint_every</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+
+<span class="nt">automax</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deterministic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">n_trials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">  </span><span class="nt">SEED</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">42</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resnet18_tpAUC_CVaR_loss_cifar10</span>
+<span class="w">  </span><span class="nt">output_directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./automax_output</span>
+<span class="w">  </span><span class="nt">overwrite</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="run">
+<h2>Run<a class="headerlink" href="#run" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>src.auto_trainer<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--config_file<span class="w"> </span>recipes/config_tpauc_cvar.yaml
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">max_fpr:</span> <span class="pre">0.3</span></code> and <code class="docutils literal notranslate"><span class="pre">min_tpr:</span> <span class="pre">0.7</span></code> define the rectangular region of
+the ROC curve being optimized — FPR ∈ [0, 0.3] and TPR ∈ [0.7, 1.0].
+The <code class="docutils literal notranslate"><span class="pre">squared_hinge</span></code> surrogate loss is the default for CVaR-based pAUC
+optimization; it can be swapped for other surrogate losses supported by
+LibAUC.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tpauc.html" class="btn btn-neutral float-left" title="Two-way pAUC — pAUCLoss (2w) + SOTAs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Optimization-AI Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

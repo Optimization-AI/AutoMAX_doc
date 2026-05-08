@@ -47,13 +47,13 @@ Step 3 — Run AutoMAX
 
 .. code-block:: bash
 
-   python -m src.ui.auto_trainer --config_file config.yaml
+   python -m src.auto_trainer --config_file config.yaml
 
 You can override any ``training`` field directly on the command line:
 
 .. code-block:: bash
 
-   python -m src.ui.auto_trainer --config_file config.yaml --epochs 50 --seed 0
+   python -m src.auto_trainer --config_file config.yaml --epochs 50 --seed 0
 
 Entry Points
 ------------

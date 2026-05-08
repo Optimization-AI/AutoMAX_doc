@@ -1,11 +1,13 @@
 Recipes
 =======
 
-Ready-to-use config files for common tasks, located in ``recipes/automax/``.
+Ready-to-use config files for common tasks, located in ``recipes/``.
+Each recipe corresponds directly to a YAML file in the
+`AutoMAX repository <https://github.com/Optimization-AI/AutoMAX/tree/main/recipes>`_.
 
 .. list-table::
    :header-rows: 1
-   :widths: 30 25 45
+   :widths: 30 30 40
 
    * - Recipe
      - Loss / Optimizer
@@ -22,6 +24,9 @@ Ready-to-use config files for common tasks, located in ``recipes/automax/``.
    * - :doc:`tpauc`
      - ``pAUCLoss (2w)`` / ``SOTAs``
      - Two-way pAUC — restrict both FPR and TPR ranges
+   * - :doc:`tpauc_cvar`
+     - ``tpAUC_CVaR_loss`` / ``STACO``
+     - Two-way pAUC with CVaR surrogate — robust tail-aware optimization
 
 .. toctree::
    :hidden:
@@ -30,3 +35,4 @@ Ready-to-use config files for common tasks, located in ``recipes/automax/``.
    auprc
    opauc
    tpauc
+   tpauc_cvar

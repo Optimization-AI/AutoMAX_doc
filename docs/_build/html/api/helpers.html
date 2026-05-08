@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>src.core.helpers &mdash; AutoMAX 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3b04382a" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="src.auto_trainer" href="auto_trainer.html" />
+    <link rel="prev" title="autopartial" href="autopartial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AutoMAX
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="core.html"><code class="docutils literal notranslate"><span class="pre">src.core</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="automax.html"><code class="docutils literal notranslate"><span class="pre">AutoMAX</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="automax.html#AutoMAX"><code class="docutils literal notranslate"><span class="pre">AutoMAX</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="automax.html#AutoMAX.__init__"><code class="docutils literal notranslate"><span class="pre">AutoMAX.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="automax.html#AutoMAX.train"><code class="docutils literal notranslate"><span class="pre">AutoMAX.train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="automax.html#AutoMAX.optimize"><code class="docutils literal notranslate"><span class="pre">AutoMAX.optimize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="automax_configration.html"><code class="docutils literal notranslate"><span class="pre">AutoMAXConfigration</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="automax_configration.html#AutoMAXConfigration"><code class="docutils literal notranslate"><span class="pre">AutoMAXConfigration</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="autopartial.html"><code class="docutils literal notranslate"><span class="pre">autopartial</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="autopartial.html#id0"><code class="docutils literal notranslate"><span class="pre">autopartial</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="autopartial.html#autopartial.__call__"><code class="docutils literal notranslate"><span class="pre">autopartial.__call__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">src.core.helpers</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#parse_hyperparameters_from_dict"><code class="docutils literal notranslate"><span class="pre">parse_hyperparameters_from_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auto_trainer.html"><code class="docutils literal notranslate"><span class="pre">src.auto_trainer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auto_trainer.html#main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_trainer.html#apply_cli_overrides"><code class="docutils literal notranslate"><span class="pre">apply_cli_overrides()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_trainer.html#set_seed"><code class="docutils literal notranslate"><span class="pre">set_seed()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auto_gnn.html"><code class="docutils literal notranslate"><span class="pre">src.auto_gnn</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auto_gnn.html#main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_gnn.html#apply_cli_overrides"><code class="docutils literal notranslate"><span class="pre">apply_cli_overrides()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_gnn.html#set_seed"><code class="docutils literal notranslate"><span class="pre">set_seed()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/quickstart.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/quickstart.html#step-1-install">Step 1 — Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/quickstart.html#step-2-write-a-config">Step 2 — Write a config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/quickstart.html#step-3-run-automax">Step 3 — Run AutoMAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/quickstart.html#entry-points">Entry Points</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/installation.html#from-source">From Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/installation.html#core-dependencies">Core Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/installation.html#verifying-the-install">Verifying the Install</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/configuration.html">Configuration Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#dataset"><code class="docutils literal notranslate"><span class="pre">dataset</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#model"><code class="docutils literal notranslate"><span class="pre">model</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#metrics"><code class="docutils literal notranslate"><span class="pre">metrics</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#training"><code class="docutils literal notranslate"><span class="pre">training</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#experiment-tracking">Experiment tracking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#core-training-parameters">Core training parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#loss-and-optimizer">Loss and optimizer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#learning-rate-schedule">Learning rate schedule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#checkpointing">Checkpointing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#automax"><code class="docutils literal notranslate"><span class="pre">automax</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AutoMAX Search</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/automax_search.html">AutoMAX Search</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/automax_search.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/automax_search.html#resuming-a-search">Resuming a Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/automax_search.html#what-gets-tuned">What Gets Tuned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/automax_search.html#output">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/loss_optimizer_pairs.html">Loss / Optimizer Pairs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/loss_optimizer_pairs.html#choosing-a-pair">Choosing a Pair</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/hyperparameter_format.html">Hyperparameter Definition Format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/hyperparameter_format.html#scalar-constant">Scalar Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/hyperparameter_format.html#search-space-dict">Search Space Dict</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/hyperparameter_format.html#sub-fields">Sub-fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/hyperparameter_format.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cli_overrides.html">CLI Overrides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/cli_overrides.html#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Recipes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/auroc.html">AUROC — AUCMLoss + PESG</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/auroc.html#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/auroc.html#run">Run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/auroc.html#hyperparameter-search-space">Hyperparameter search space</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/auprc.html">AUPRC — APLoss + SOAP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/auprc.html#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/auprc.html#run">Run</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/opauc.html">One-way pAUC — pAUCLoss (1w) + SOPAs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/opauc.html#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/opauc.html#run">Run</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/tpauc.html">Two-way pAUC — pAUCLoss (2w) + SOTAs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/tpauc.html#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/tpauc.html#run">Run</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/tpauc_cvar.html">Two-way pAUC CVaR — tpAUC_CVaR_loss + STACO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/tpauc_cvar.html#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/tpauc_cvar.html#run">Run</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AutoMAX</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API Reference</a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">src.core.helpers</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/helpers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="src-core-helpers">
+<h1><code class="docutils literal notranslate"><span class="pre">src.core.helpers</span></code><a class="headerlink" href="#src-core-helpers" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="parse_hyperparameters_from_dict">
+<span class="sig-name descname"><span class="pre">parse_hyperparameters_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parse_hyperparameters_from_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert a raw hyperparameter specification dict into a mapping of
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Hyperparameter</span></code> objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>items</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – Mapping of hyperparameter name to its specification.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Parsed hyperparameters keyed by name.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, Hyperparameter]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If a specification is malformed or an unsupported type
+is encountered.</p>
+</dd>
+</dl>
+<p class="rubric">Supported specification formats</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Python value</p></th>
+<th class="head"><p>Produced type</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Constant</span></code></p></td>
+<td><p>Fixed value; not searched.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">(lower,</span> <span class="pre">upper)</span></code> tuple</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">UniformFloatHyperparameter</span></code> or
+<code class="xref py py-class docutils literal notranslate"><span class="pre">UniformIntegerHyperparameter</span></code></p></td>
+<td><p>Type inferred from bounds: <code class="docutils literal notranslate"><span class="pre">float</span></code> → Float HP, <code class="docutils literal notranslate"><span class="pre">int</span></code> → Int HP.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[choice1,</span> <span class="pre">choice2,</span> <span class="pre">…]</span></code> list</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">CategoricalHyperparameter</span></code></p></td>
+<td><p>First element used as default unless overridden.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{&quot;val&quot;:</span> <span class="pre">…,</span> <span class="pre">&quot;default&quot;:</span> <span class="pre">…,</span> <span class="pre">&quot;log&quot;:</span> <span class="pre">…}</span></code> dict</p></td>
+<td><p>Same as above, extended format</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;val&quot;</span></code> is required; <code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;log&quot;</span></code> are optional.
+<code class="docutils literal notranslate"><span class="pre">&quot;log&quot;:</span> <span class="pre">True</span></code> enables log-scale sampling for numeric ranges.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Hyperparameter</span></code> instance</p></td>
+<td><p>Passed through unchanged</p></td>
+<td><p>Allows mixing raw specs and pre-built ConfigSpace objects.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">src.core.helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse_hyperparameters_from_dict</span>
+
+<span class="n">specs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;lr&quot;</span><span class="p">:</span>      <span class="p">{</span><span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">1e-4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span> <span class="s2">&quot;log&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="s2">&quot;margin&quot;</span><span class="p">:</span>  <span class="p">{</span><span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">},</span>
+    <span class="s2">&quot;dropout&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="s2">&quot;epochs&quot;</span><span class="p">:</span>  <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+<span class="p">}</span>
+
+<span class="n">hps</span> <span class="o">=</span> <span class="n">parse_hyperparameters_from_dict</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="c1"># hps[&quot;lr&quot;]      → UniformFloatHyperparameter (log-scale)</span>
+<span class="c1"># hps[&quot;margin&quot;]  → CategoricalHyperparameter</span>
+<span class="c1"># hps[&quot;dropout&quot;] → Constant(0.5)</span>
+<span class="c1"># hps[&quot;epochs&quot;]  → UniformIntegerHyperparameter</span>
+</pre></div>
+</div>
+<p class="rubric">Extended dict format</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">{&quot;val&quot;:</span> <span class="pre">…}</span></code> dict format gives you fine-grained control:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># YAML equivalent used in AutoMAX config files</span>
+<span class="nt">optimizer_kwargs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">lr</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">val</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.0001</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.1</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">    </span><span class="nt">log</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">margin</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">val</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.6</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If both <code class="docutils literal notranslate"><span class="pre">&quot;log&quot;:</span> <span class="pre">true</span></code> and a list-of-choices <code class="docutils literal notranslate"><span class="pre">val</span></code> are supplied,
+the <code class="docutils literal notranslate"><span class="pre">log</span></code> flag is silently ignored (categorical HPs have no
+log-scale concept).</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="autopartial.html" class="btn btn-neutral float-left" title="autopartial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="auto_trainer.html" class="btn btn-neutral float-right" title="src.auto_trainer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Optimization-AI Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

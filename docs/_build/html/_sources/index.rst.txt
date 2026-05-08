@@ -54,6 +54,12 @@ for your dataset.
 
 .. toctree::
    :maxdepth: 1
+   :caption: API Reference
+
+   api/index
+
+.. toctree::
+   :maxdepth: 1
    :caption: Get Started
 
    intro/quickstart
@@ -75,8 +81,4 @@ for your dataset.
 
    recipes/index
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Reference
 
-   api/index

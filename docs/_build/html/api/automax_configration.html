@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoMAXConfigration &mdash; AutoMAX 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3b04382a" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="autopartial" href="autopartial.html" />
+    <link rel="prev" title="AutoMAX" href="automax.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AutoMAX
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="core.html"><code class="docutils literal notranslate"><span class="pre">src.core</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="automax.html"><code class="docutils literal notranslate"><span class="pre">AutoMAX</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="automax.html#AutoMAX"><code class="docutils literal notranslate"><span class="pre">AutoMAX</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="automax.html#AutoMAX.__init__"><code class="docutils literal notranslate"><span class="pre">AutoMAX.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="automax.html#AutoMAX.train"><code class="docutils literal notranslate"><span class="pre">AutoMAX.train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="automax.html#AutoMAX.optimize"><code class="docutils literal notranslate"><span class="pre">AutoMAX.optimize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">AutoMAXConfigration</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#AutoMAXConfigration"><code class="docutils literal notranslate"><span class="pre">AutoMAXConfigration</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="autopartial.html"><code class="docutils literal notranslate"><span class="pre">autopartial</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="autopartial.html#id0"><code class="docutils literal notranslate"><span class="pre">autopartial</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="autopartial.html#autopartial.__call__"><code class="docutils literal notranslate"><span class="pre">autopartial.__call__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html"><code class="docutils literal notranslate"><span class="pre">src.core.helpers</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="helpers.html#parse_hyperparameters_from_dict"><code class="docutils literal notranslate"><span class="pre">parse_hyperparameters_from_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auto_trainer.html"><code class="docutils literal notranslate"><span class="pre">src.auto_trainer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auto_trainer.html#main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_trainer.html#apply_cli_overrides"><code class="docutils literal notranslate"><span class="pre">apply_cli_overrides()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_trainer.html#set_seed"><code class="docutils literal notranslate"><span class="pre">set_seed()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auto_gnn.html"><code class="docutils literal notranslate"><span class="pre">src.auto_gnn</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auto_gnn.html#main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_gnn.html#apply_cli_overrides"><code class="docutils literal notranslate"><span class="pre">apply_cli_overrides()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto_gnn.html#set_seed"><code class="docutils literal notranslate"><span class="pre">set_seed()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/quickstart.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/quickstart.html#step-1-install">Step 1 — Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/quickstart.html#step-2-write-a-config">Step 2 — Write a config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/quickstart.html#step-3-run-automax">Step 3 — Run AutoMAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/quickstart.html#entry-points">Entry Points</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/installation.html#from-source">From Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/installation.html#core-dependencies">Core Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/installation.html#verifying-the-install">Verifying the Install</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/configuration.html">Configuration Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#dataset"><code class="docutils literal notranslate"><span class="pre">dataset</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#model"><code class="docutils literal notranslate"><span class="pre">model</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#metrics"><code class="docutils literal notranslate"><span class="pre">metrics</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#training"><code class="docutils literal notranslate"><span class="pre">training</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#experiment-tracking">Experiment tracking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#core-training-parameters">Core training parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#loss-and-optimizer">Loss and optimizer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#learning-rate-schedule">Learning rate schedule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/configuration.html#checkpointing">Checkpointing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/configuration.html#automax"><code class="docutils literal notranslate"><span class="pre">automax</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AutoMAX Search</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/automax_search.html">AutoMAX Search</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/automax_search.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/automax_search.html#resuming-a-search">Resuming a Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/automax_search.html#what-gets-tuned">What Gets Tuned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/automax_search.html#output">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/loss_optimizer_pairs.html">Loss / Optimizer Pairs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/loss_optimizer_pairs.html#choosing-a-pair">Choosing a Pair</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/hyperparameter_format.html">Hyperparameter Definition Format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/hyperparameter_format.html#scalar-constant">Scalar Constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/hyperparameter_format.html#search-space-dict">Search Space Dict</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/hyperparameter_format.html#sub-fields">Sub-fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/hyperparameter_format.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/cli_overrides.html">CLI Overrides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/cli_overrides.html#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Recipes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/auroc.html">AUROC — AUCMLoss + PESG</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/auroc.html#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/auroc.html#run">Run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/auroc.html#hyperparameter-search-space">Hyperparameter search space</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/auprc.html">AUPRC — APLoss + SOAP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/auprc.html#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/auprc.html#run">Run</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/opauc.html">One-way pAUC — pAUCLoss (1w) + SOPAs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/opauc.html#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/opauc.html#run">Run</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/tpauc.html">Two-way pAUC — pAUCLoss (2w) + SOTAs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/tpauc.html#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/tpauc.html#run">Run</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../recipes/tpauc_cvar.html">Two-way pAUC CVaR — tpAUC_CVaR_loss + STACO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/tpauc_cvar.html#config">Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../recipes/tpauc_cvar.html#run">Run</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AutoMAX</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API Reference</a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">AutoMAXConfigration</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/automax_configration.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="automaxconfigration">
+<h1><code class="docutils literal notranslate"><span class="pre">AutoMAXConfigration</span></code><a class="headerlink" href="#automaxconfigration" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="AutoMAXConfigration">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">AutoMAXConfigration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AutoMAXConfigration" title="Link to this definition"></a></dt>
+<dd><p>Configuration container for an AutoMAX hyperparameter-optimisation run.</p>
+<p>All arguments are keyword-only and are consumed via <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>.
+Maps directly to the <code class="docutils literal notranslate"><span class="pre">automax:</span></code> section of the YAML config file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deterministic</strong> (<em>bool</em>) – Enforce deterministic behaviour across trials.</p></li>
+<li><p><strong>n_trials</strong> (<em>int</em>) – Total number of HPO trials to run.</p></li>
+<li><p><strong>n_configs</strong> (<em>int</em>) – Number of configurations evaluated per trial.</p></li>
+<li><p><strong>SEED</strong> (<em>int</em>) – Random seed used by the SMAC3 sampler (default: <code class="docutils literal notranslate"><span class="pre">0</span></code>).</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Human-readable identifier for the search run.</p></li>
+<li><p><strong>output_directory</strong> (<em>str</em>) – Directory where AutoMAX writes results
+(default: <code class="docutils literal notranslate"><span class="pre">&quot;./automax_output&quot;</span></code>).</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) – Overwrite an existing output directory with the same <em>name</em>.</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">src.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoMAXConfigration</span>
+
+<span class="n">automax_cfg</span> <span class="o">=</span> <span class="n">AutoMAXConfigration</span><span class="p">(</span>
+    <span class="n">deterministic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">n_trials</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">n_configs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">SEED</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my_search&quot;</span><span class="p">,</span>
+    <span class="n">output_directory</span><span class="o">=</span><span class="s2">&quot;./automax_output&quot;</span><span class="p">,</span>
+    <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>YAML equivalent</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">automax</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deterministic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">n_trials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
+<span class="w">  </span><span class="nt">n_configs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">  </span><span class="nt">SEED</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_search</span>
+<span class="w">  </span><span class="nt">output_directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./automax_output</span>
+<span class="w">  </span><span class="nt">overwrite</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+<p class="rubric">Attributes</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 15.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">deterministic</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>Enforce deterministic training across all trials.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">n_trials</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Total number of HPO trials to run.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">n_configs</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Configurations evaluated per trial.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SEED</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Random seed for the SMAC3 sampler (default: <code class="docutils literal notranslate"><span class="pre">0</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>str</p></td>
+<td><p>Unique run identifier; also used as the SMAC3 scenario name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">output_directory</span></code></p></td>
+<td><p>str</p></td>
+<td><p>Root output directory (default: <code class="docutils literal notranslate"><span class="pre">&quot;./automax_output&quot;</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>Whether to overwrite an existing run with the same <em>name</em>.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="automax.html" class="btn btn-neutral float-left" title="AutoMAX" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="autopartial.html" class="btn btn-neutral float-right" title="autopartial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Optimization-AI Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
