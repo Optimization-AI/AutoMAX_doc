@@ -31,7 +31,8 @@ jobs:
           cache-dependency-path: requirements-docs.txt
 
       - name: Install dependencies
-        run: pip install -r requirements-docs.txt
+        run: |
+          pip install -r requirements-docs.txt
 
       - name: Build docs
         run: sphinx-build -b html docs docs/_build/html -W --keep-going

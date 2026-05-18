@@ -1,81 +1,67 @@
 .. AutoMAX documentation master file
 
+:github_url: https://github.com/Optimization-AI/AutoMAX
+
 AutoMAX
 =======
 
-.. image:: https://img.shields.io/badge/python-3.10-blue?style=flat
-   :alt: Python 3.10
+An Automated Hyperparameter Optimization Framework for AUC-based Metrics
+================================================================================================================================
 
-.. image:: https://img.shields.io/badge/PyTorch-2.0+-orange?style=flat
-   :alt: PyTorch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: https://img.shields.io/badge/SMAC3-powered-7c6dff?style=flat
-   :alt: SMAC3
+.. raw:: html
 
-|
+   <p align="center">
+   <a href="https://github.com/Optimization-AI/AutoMAX">
+   <img src="https://img.shields.io/badge/python-3.10-blue?style=flat" alt="Python 3.10"></a>
 
-**AutoMAX** is an automated hyperparameter optimization framework for
-AUC-based metrics, built on top of `LibAUC <https://github.com/Optimization-AI/LibAUC>`_
-and `SMAC3 <https://github.com/automl/SMAC3>`_.
+   <a href="https://github.com/Optimization-AI/AutoMAX">
+   <img src="https://img.shields.io/badge/PyTorch-2.0+-orange?style=flat" alt="PyTorch"></a>
 
-Instead of manually sweeping learning rates, margins, and decay schedules,
-AutoMAX runs a Bayesian search over the predefined hyperparameter spaces for
-each supported loss/optimizer pair — then returns the best configuration
-for your dataset.
+   <a href="https://github.com/Optimization-AI/AutoMAX">
+   <img src="https://img.shields.io/badge/SMAC3-powered-7c6dff?style=flat" alt="SMAC3"></a>
+   </p>
 
-.. grid:: 2
-   :gutter: 3
 
-   .. grid-item-card:: 🚀 Quick Start
-      :link: intro/quickstart
-      :link-type: doc
+================================================================================================================================
+Why AutoMAX?
+================================================================================================================================
 
-      Install AutoMAX and run your first AutoTune in minutes.
+**AutoMAX** is an automated hyperparameter optimization framework for AUC-based metrics, built on top of `LibAUC <https://github.com/Optimization-AI/LibAUC>`_ and `SMAC3 <https://github.com/automl/SMAC3>`_.
 
-   .. grid-item-card:: ⚙️ Configuration
-      :link: intro/configuration
-      :link-type: doc
+Instead of manually sweeping learning rates, margins, and decay schedules, AutoMAX runs a Bayesian search over the predefined hyperparameter spaces for each supported loss/optimizer pair — then returns the best configuration for your dataset.
 
-      Full reference for the YAML config file — all five sections.
-
-   .. grid-item-card:: 🔍 AutoMAX Search
-      :link: intro/automax_search
-      :link-type: doc
-
-      How the SMAC3-based search works and what it tunes.
-
-   .. grid-item-card:: 📋 Recipes
-      :link: recipes/index
-      :link-type: doc
-
-      Ready-to-use configs for AUROC, AUPRC, pAUC, and more.
-
-----
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
+   :glob:
+   :maxdepth: 1
+   :caption: Get Started
+
+   Quick Start <intro/quickstart>
+   Installation <intro/installation>
+   Configuration <intro/configuration>
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+   :caption: AutoMAX Search
+
+   AutoMAX Search <intro/automax_search>
+   Loss-Optimizer Pairs <intro/loss_optimizer_pairs>
+   Hyperparameter Format <intro/hyperparameter_format>
+   CLI Overrides <intro/cli_overrides>
+
+.. toctree::
+   :glob:
    :maxdepth: 1
    :caption: API Reference
 
    api/index
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Get Started
-
-   intro/quickstart
-   intro/installation
-   intro/configuration
-
-.. toctree::
-   :maxdepth: 1
-   :caption: AutoMAX Search
-
-   intro/automax_search
-   intro/loss_optimizer_pairs
-   intro/hyperparameter_format
-   intro/cli_overrides
-
-.. toctree::
+   :glob:
    :maxdepth: 2
    :caption: Recipes
 
